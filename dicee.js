@@ -1,6 +1,8 @@
 const dice1 = [1,2,3,4,5,6];
 const dice2 = [1,2,3,4,5,6];
-
+const message_1 = "&#128681; Draw";
+const message_2 = "&#128681; Player 1 Wins";
+const message_3 = "&#128681; Player 2 Wins";
 
 
 //Function to roll dice 1 //
@@ -28,16 +30,14 @@ function dice_2 () {
 }
 
 //function to announce the winner//
-function Winner(valuea,valueb) {
-    if(valuea = valueb) {
-        document.getElementById("winner").innerHTML = "Draw"; 
-    } else if (valuea > valueb) {
-        document.getElementById("winner").innerHTML = "Player 1 wins";
-    } else {document.getElementById("winner").innerHTML = "Player 2 wins";
+function Winner(value_a,value_b) {
+    if(value_a === value_b) {
+        document.getElementById("winner").innerHTML = message_1; 
+    } else if(value_a > value_b) {
+        document.getElementById("winner").innerHTML = message_2;
+    } else {document.getElementById("winner").innerHTML = message_3;
     }
 }
-
-
 
 //Function to choose random values/
 function add_random(dice) {
@@ -45,6 +45,11 @@ function add_random(dice) {
     return temp_value;
 }
 
+
+
+
 let result1 = dice_1()
 let result2 = dice_2()
-Winner(result1, result2)
+console.log(result1)
+console.log(result2)
+console.log(Winner(result1, result2))
